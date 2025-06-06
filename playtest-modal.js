@@ -71,7 +71,7 @@
     });
   });
 
-  function validateForm(container) {
+  function validateFormNew(container) {
     const requiredFields = container.querySelectorAll('[required]');
     const requiredType = container.dataset.required;
     let allValid = true;
@@ -115,7 +115,7 @@
 
   function updateNextButton(container) {
     const nextButton = container.querySelector('.bg-next-btn-js');
-    if (validateForm(container) && validatePhoneOSFields()) {
+    if (validateFormNew(container) && validatePhoneOSFields()) {
     	if( nextButton ) {
         nextButton.removeAttribute('disabled');
         nextButton.classList.remove('disabled');
@@ -133,7 +133,7 @@
   document.querySelectorAll('.bg-next-btn-js').forEach((el) => {
     el.addEventListener('click', (element) => {
       const container = element.currentTarget.closest('.multiform-item');
-      if (validateForm(container) && validatePhoneOSFields()) {
+      if (validateFormNew(container) && validatePhoneOSFields()) {
         const indexNumber = nextStep(element, 'next');
         const nextStepElement = document.querySelectorAll('.multiform-item')[indexNumber + 1];
         if (nextStepElement) {
