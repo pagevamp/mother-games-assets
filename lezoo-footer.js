@@ -1,23 +1,3 @@
-
-
-
-window.addEventListener("load", () => {
-  triggerPlayTestPopup();
-});
-document.addEventListener("DOMContentLoaded", () => {
-  loadIframeIfNeeded();
-  setReferralSession();
-  multistepFormChecking();
-  disableDefaultFormSubmission();
-  disableSurveyFormSubmission();
-  addURLParamsOnPlayTestButton();
-  setReferralInButtons();
-  navActive();
-  triggerHadleMobileClass();
-  scrollAddClassOnScroll();
-  document.body.classList.add('content-loaded');
-});
-
 function lezooCioAnalytics(event) {
   let email = event.target.querySelector('[type="email"]').value;
   if(email != undefined) {
@@ -341,7 +321,7 @@ function bannerExists() {
   }
 }
 
-bannerExists();
+
 
 
 function debounce(func) {
@@ -472,7 +452,8 @@ $(function () {
 
 
 
-document.addEventListener('DOMContentLoaded', function() {
+function parentURLChange() {
+
   // Use a delay to ensure the DOM is fully loaded before adding the class
   setTimeout(function() {
     if (window.location.pathname.includes('/explore/')) {
@@ -485,9 +466,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
   }, 100); // Adding a slight delay to ensure everything is loaded before adding the class
-});
 
-document.addEventListener('DOMContentLoaded', function() {
   // Use a delay to ensure the DOM is fully loaded before adding the class
   setTimeout(function() {
     if (window.location.pathname.includes('/realms/')) {
@@ -500,10 +479,8 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
   }, 100); // Adding a slight delay to ensure everything is loaded before adding the class
-});
 
 
-document.addEventListener('DOMContentLoaded', function() {
   // Use a delay to ensure the DOM is fully loaded before adding the class
   setTimeout(function() {
     if (window.location.pathname.includes('/guides/')) {
@@ -516,7 +493,8 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
   }, 100); // Adding a slight delay to ensure everything is loaded before adding the class
-});
+
+}
 
 var header = document.querySelector(".firstpaid-header");
 if( header ) {
@@ -540,8 +518,9 @@ function detectDevice() {
   return "Other";
 }
 
-document.addEventListener("DOMContentLoaded", async () => {
-  const countryField = document.querySelector("#Country-3");
+function contryFields()
+{
+const countryField = document.querySelector("#Country-3");
   countryField.value = "United States";
 
   const stateField = document.querySelector("#state");
@@ -710,7 +689,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     cityField.required = true;
 
   }
-});
+}
+
 
 function loadIframeIfNeeded() {
   const storedReferralCode = localStorage.getItem("lezoo_referral");
@@ -810,3 +790,20 @@ function navActive() {
     })
   }
 }
+
+
+triggerPlayTestPopup();
+loadIframeIfNeeded();
+parentURLChange();
+setReferralSession();
+multistepFormChecking();
+disableDefaultFormSubmission();
+disableSurveyFormSubmission();
+addURLParamsOnPlayTestButton();
+setReferralInButtons();
+navActive();
+triggerHadleMobileClass();
+scrollAddClassOnScroll();
+document.body.classList.add('content-loaded');
+bannerExists();
+contryFields();
