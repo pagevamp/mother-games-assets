@@ -801,8 +801,10 @@ function navActive() {
   // Function for ham burger mobile-navigation-opener
   var mobtn = document.querySelector(".lz-mobile-navigation-opener");
   var body = document.querySelector("body");
+  console.log('lz navigation',mobtn)
   if (mobtn) {
     mobtn.addEventListener("click", () => {
+      console.log('clicked');
       body.classList.toggle('nav-active');
       body.classList.toggle('overflow-hidden');
     })
