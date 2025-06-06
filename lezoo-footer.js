@@ -308,9 +308,11 @@ var mobtn = document.querySelector(".mobile-navigation-opener");
 var body = document.querySelector("body");
 var headNavigation = document.querySelector(".header-navigation");
 
+console.log('footer script loaded');
 
 if (mobtn) {
   mobtn.addEventListener("click", () => {
+    console.log('testing navigation');
     body.classList.toggle('nav-active');
   })
 }
